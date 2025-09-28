@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Black Force 007 — General Knowledge Quiz</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="logo">
+        <h1>Black Force 007</h1>
+        <p class="subtitle">সাধারণ জ্ঞান • সামাজিক কৌশল • মানুষ চিনতে শেখা</p>
+      </div>
+      <div class="settings">
+        <label>টাইমার:
+          <select id="timerSelect">
+            <option value="15">15 s</option>
+            <option value="30">30 s</option>
+          </select>
+        </label>
+        <button id="startBtn" class="btn">শুরু করুন</button>
+      </div>
+    </header>
+
+    <main class="main" id="main">
+      <!-- Welcome / Start -->
+      <section id="welcome" class="card visible">
+        <h2>কুইজে স্বাগতম!</h2>
+        <p>প্রশ্নসংখ্যা: <strong id="totalQuestions">50</strong> • প্রতিটি প্রশ্নে টাইমার সেট করুন এবং শুরু চাপুন।</p>
+        <div class="small">ফিচার: টাইমার বোনাস, স্ট্রিক বোনাস, র‍্যানডোম প্রশ্ন, লিডারবোর্ড ও অ্যাচিভমেন্ট।</div>
+      </section>
+
+      <!-- Quiz Screen -->
+      <section id="quiz" class="card">
+        <div class="topbar">
+          <div class="qcount">প্রশ্ন <span id="currentIndex">1</span>/<span id="qTotal">50</span></div>
+          <div class="timer" id="timer">15</div>
+        </div>
+
+        <div class="question-block">
+          <h3 id="questionText">প্রশ্ন এখানে দেখাবে</h3>
+          <div class="options" id="options"></div>
+        </div>
+
+        <div class="statusbar">
+          <div>স্কোর: <span id="score">0</span></div>
+          <div>স্ট্রিক: <span id="streak">0</span></div>
+          <div>সঠিক: <span id="correctCount">0</span> / ভুল: <span id="wrongCount">0</span></div>
+        </div>
+
+        <div class="controls">
+          <button id="nextBtn" class="btn muted">পরবর্তী</button>
+          <button id="quitBtn" class="btn danger">ছেড়ে দিন</button>
+        </div>
+      </section>
+
+      <!-- Result Screen -->
+      <section id="result" class="card">
+        <h2>ফলাফল</h2>
+        <div class="result-grid">
+          <div>সর্বমোট স্কোর: <strong id="finalScore">0</strong></div>
+          <div>সঠিক: <strong id="finalCorrect">0</strong></div>
+          <div>ভুল: <strong id="finalWrong">0</strong></div>
+          <div>মোট সময় ব্যয়: <strong id="finalTime">0s</strong></div>
+        </div>
+
+        <div class="achievements card-mini" id="achievements"></div>
+
+        <div class="leaderboard card-mini">
+          <h3>লিডারবোর্ড</h3>
+          <ol id="leaderList"></ol>
+          <div class="leader-form">
+            <input id="playerName" placeholder="আপনার নাম" />
+            <button id="saveScore" class="btn">স্কোর সেভ করুন</button>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="playAgain" class="btn">আবার খেলুন</button>
+          <button id="goHome" class="btn muted">হোম</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>© Black Force 007 • Quiz Engine • Built for general public</small>
+    </footer>
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+  </html>
